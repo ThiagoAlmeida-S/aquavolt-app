@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DarkTheme, NavigationContainer } from '@react-navigation/native';
+import { ControlesScreen } from '../screens/ControlesScreen';
 import { PainelScreen } from '../screens/PainelScreen';
 import { colors } from '../theme/theme';
 
@@ -40,6 +41,15 @@ export function AppNavigator() {
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="speedometer-outline" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Controles"
+          component={ControlesScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="options-outline" color={color} size={size} />
             ),
           }}
         />
