@@ -1,10 +1,11 @@
 // Função base para falar com o backend.
 // Se a API estiver parada, o app não trava: ele recebe um erro "API fora do ar".
 
-// ⚠️ Troque pelo IPv4 do seu PC: rode `ipconfig` no PowerShell e copie o
-// "Endereço IPv4" da sua rede Wi-Fi. Celular e PC precisam estar na mesma rede.
-// (No emulador Android use '10.0.2.2'.)
-const HOST = '192.168.0.73';
+// O endereço da API vem do arquivo .env (veja o README):
+//   navegador ou simulador iOS -> localhost
+//   emulador Android           -> 10.0.2.2
+//   celular de verdade         -> IPv4 do PC (rode `ipconfig`)
+const HOST = process.env.EXPO_PUBLIC_API_HOST ?? 'localhost';
 
 export const API_URL = `http://${HOST}:8080/api`;
 

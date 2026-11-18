@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DarkTheme, NavigationContainer } from '@react-navigation/native';
+import { AlertasScreen } from '../screens/AlertaScreen';
 import { ControlesScreen } from '../screens/ControlesScreen';
 import { PainelScreen } from '../screens/PainelScreen';
 import { colors } from '../theme/theme';
@@ -50,6 +51,15 @@ export function AppNavigator() {
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="options-outline" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Alertas"
+          component={AlertasScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="notifications-outline" color={color} size={size} />
             ),
           }}
         />
